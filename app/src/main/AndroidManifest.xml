@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.parkererickson.a438_project1">
+    package="com.example.graderecorder">
 
     <application
         android:allowBackup="true"
