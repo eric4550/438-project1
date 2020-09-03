@@ -1,0 +1,33 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "90809e6eca51ae23fe5ec21c5e7fefb0",
+    "entities": [
+      {
+        "tableName": "courselog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mCourseID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mCourseID",
+            "columnName": "mCourseID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mCourseID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"90809e6eca51ae23fe5ec21c5e7fefb0\")"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "f718af718fc88e1edccdeab0e4c9b01b",
+    "entities": [
+      {
+        "tableName": "gradelog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mGradeLogID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mGradeLogID",
+            "columnName": "mGradeLogID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mGradeLogID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f718af718fc88e1edccdeab0e4c9b01b\")"
+    ]
+  }
+}
