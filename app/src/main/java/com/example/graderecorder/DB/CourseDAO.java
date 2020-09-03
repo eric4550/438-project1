@@ -11,7 +11,7 @@ import com.example.graderecorder.CourseLog;
 import java.util.List;
 
 @Dao
-public interface CousreIDDAO {
+public interface CourseDAO {
 
     @Insert
     void insert(CourseLog... courseLogs);

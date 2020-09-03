@@ -12,4 +12,7 @@ public class StudentLog {
 
     private int mStudentLogId;
 
+    public StudentLog(int mStudentLogId) {
+        this.mStudentLogId = mStudentLogId;
+    }
 }

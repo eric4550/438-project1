@@ -1,0 +1,33 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "a8389f4c837261bd9da5124bd2144aad",
+    "entities": [
+      {
+        "tableName": "assignmentlog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mAssignmentID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mAssignmentID",
+            "columnName": "mAssignmentID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mAssignmentID"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"a8389f4c837261bd9da5124bd2144aad\")"
+    ]
+  }
+}
