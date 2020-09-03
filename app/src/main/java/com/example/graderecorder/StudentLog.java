@@ -5,12 +5,10 @@ import androidx.room.PrimaryKey;
 
 import com.example.graderecorder.DB.StudentDatabase;
 
-@Entity(tableName = StudentDatabase.STUDENTlOG_TABLE)
+@Entity(tableName = StudentDatabase.STUDENTLOG_TABLE)
 
 public class StudentLog {
-    @PrimaryKey(autoGenerate = true)
-
-    private int mStudentLogId;
+    public int mStudentLogId;
 
     public StudentLog(int mStudentLogId) {
         this.mStudentLogId = mStudentLogId;
