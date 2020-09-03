@@ -1,4 +1,4 @@
-package com.parkererickson.a438_project1;
+package com.example.graderecorder;
 
 import org.junit.Test;
 
