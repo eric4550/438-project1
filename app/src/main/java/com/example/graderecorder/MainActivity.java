@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainDisplay = findViewById(R.id.mainDisplayID);
 
-        signIn = findViewById(R.id.signInID);
+        signIn = findViewById(R.id.btnLogin);
 //        grade = findViewById(gradeID);
 
         signIn.setOnClickListener(new View.OnClickListener() {
