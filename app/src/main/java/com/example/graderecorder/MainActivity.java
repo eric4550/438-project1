@@ -81,6 +81,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //    method to open error message
+    public void openDialog(){
+        AcctErrorMsg errorMsg = new AcctErrorMsg();
+        errorMsg.show(getSupportFragmentManager(), "We just got fragged");
+    }
 }
 
 

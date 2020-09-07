@@ -12,4 +12,5 @@ public class GradeLog {
     @PrimaryKey(autoGenerate = true)
     private int mGradeLogID;
 
+
 }
