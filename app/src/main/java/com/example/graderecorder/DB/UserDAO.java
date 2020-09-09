@@ -19,6 +19,7 @@ public interface UserDAO {
     @Insert
     void insert(User user);
 
+    //@Query("SELECT username from User WHERE ")
 //    @Insert
 //    void insert(User... user);
 //
