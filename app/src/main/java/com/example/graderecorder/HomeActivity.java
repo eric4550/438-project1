@@ -23,10 +23,10 @@ public class HomeActivity extends AppCompatActivity {
 
         user = (User) getIntent().getSerializableExtra("User");
         tvUser = findViewById(R.id.text);
-
-        if(user != null) {
-            tvUser.setText("Welcome " + user.getUsername());
-        }
+//
+//        if(user != null) {
+//            tvUser.setText("Welcome ");
+//        }
 
     }
 }
