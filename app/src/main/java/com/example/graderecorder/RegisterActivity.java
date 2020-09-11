@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        userDAO = Room.databaseBuilder(this, UserDatabase.class,"User").build().getUserDao();
+        userDAO = Room.databaseBuilder(this, UserDatabase.class,"User").allowMainThreadQueries().build().getUserDao();
 
         btnRegister = findViewById(R.id.btnRegister);
         btnRegister.setOnClickListener(new View.OnClickListener() {
