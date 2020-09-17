@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateActivity">
+
+    <EditText
+        android:id="@+id/gEditText2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="TotalScore"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/gCategory3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gCategory2"
+        app:layout_constraintTop_toBottomOf="@+id/gEditText1" />
+
+    <EditText
+        android:id="@+id/gEditText3"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="62dp"
+        android:ems="10"
+        android:hint="TotalScore"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/gCategory4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gCategory3"
+        app:layout_constraintTop_toTopOf="@+id/gEditText2" />
+
+    <EditText
+        android:id="@+id/gEditText4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="TotalScore"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/calcGradeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gCategory4"
+        app:layout_constraintTop_toBottomOf="@+id/gCategory3" />
+
+    <TextView
+        android:id="@+id/gCategory1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="56dp"
+        android:text="Exams:"
+        app:layout_constraintBottom_toBottomOf="@+id/gEditText2"
+        app:layout_constraintEnd_toStartOf="@+id/gEditText1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/classText" />
+
+    <TextView
+        android:id="@+id/gCategory2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="41dp"
+        android:text="HomeWork:"
+        app:layout_constraintBottom_toBottomOf="@+id/gEditText2"
+        app:layout_constraintEnd_toStartOf="@+id/gEditText2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/gEditText2" />
+
+    <TextView
+        android:id="@+id/gCategory3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="30dp"
+        android:text="Quizzes"
+        app:layout_constraintBottom_toTopOf="@+id/gEditText4"
+        app:layout_constraintEnd_toStartOf="@+id/gEditText3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gEditText2" />
+
+    <TextView
+        android:id="@+id/gCategory4"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="32dp"
+        android:text="Projects"
+        app:layout_constraintBottom_toTopOf="@+id/calcGradeBtn"
+        app:layout_constraintEnd_toStartOf="@+id/gEditText4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gCategory3" />
+
+    <EditText
+        android:id="@+id/gEditText1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="TotalScore"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/gEditText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gCategory1"
+        app:layout_constraintTop_toBottomOf="@+id/classText" />
+
+    <Button
+        android:id="@+id/calcGradeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="357dp"
+        android:text="Calculate Grade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gEditText4"
+        app:layout_constraintStart_toStartOf="@+id/gEditText4"
+        app:layout_constraintTop_toBottomOf="@+id/gEditText4" />
+
+    <TextView
+        android:id="@+id/classText"
+        android:layout_width="141dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="27dp"
+        android:text="Which class"
+        app:layout_constraintBottom_toTopOf="@+id/gEditText1"
+        app:layout_constraintEnd_toEndOf="@+id/gEditText1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
