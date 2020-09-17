@@ -2,6 +2,7 @@ package com.example.graderecorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,6 @@ public class CalculateActivity extends AppCompatActivity {
         Category1 = findViewById(R.id.gCategory1);
         Category2 = findViewById(R.id.gCategory2);
         Category3 = findViewById(R.id.gCategory3);
-        Category4 = findViewById(R.id.gCategory4);
 
         Input1 = findViewById(R.id.gEditText1);
         Input2 = findViewById(R.id.gEditText2);
@@ -43,4 +43,6 @@ public class CalculateActivity extends AppCompatActivity {
 
 
     }
+
+
 }
