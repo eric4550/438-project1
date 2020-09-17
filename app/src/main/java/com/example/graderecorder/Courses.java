@@ -44,7 +44,7 @@ public class Courses extends AppCompatActivity {
         spanishBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openCalculator();
+                openCalculator();
             }
         });
 
@@ -52,7 +52,7 @@ public class Courses extends AppCompatActivity {
         cstBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openCalculator();
+                openCalculator();
             }
         });
 
@@ -60,7 +60,7 @@ public class Courses extends AppCompatActivity {
         mathBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openCalculator();
+                openCalculator();
             }
         });
 
@@ -72,8 +72,10 @@ public class Courses extends AppCompatActivity {
             }
         });
     }
-}
 
-//public void openCalculator(){
-//    Intent Start
-//}
+
+    public void openCalculator() {
+        Intent intent = new Intent(Courses.this, CalculateActivity.class);
+        startActivity(intent);
+    }
+}

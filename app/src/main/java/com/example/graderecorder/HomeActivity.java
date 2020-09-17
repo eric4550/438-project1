@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     public void openCourse(){
-        Intent intent = new Intent ( HomeActivity.this, RegisterActivity.class);
+        Intent intent = new Intent ( HomeActivity.this, Courses.class);
         startActivity(intent);
     }
 
