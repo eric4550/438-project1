@@ -22,8 +22,10 @@ public interface GradeIDDAO {
     @Delete
     void delete(GradeCategory... gradecategories);
 
-    @Query("SELECT * FROM " + GradeDatabase.GRADELOG_TABLE + " ORDER BY Date DESC")
-    List<GradeCategory> getGrades();
+    @Query("Select * FROM " +  GradeDatabase.GRADELOG_TABLE + " WHERE title = :title")
+    GradeCategory getGrade(String title);
+//    @Query("SELECT * FROM " + GradeDatabase.GRADELOG_TABLE + " ORDER BY Date DESC")
+ //   List<GradeCategory> getGrades();
 
     @Query("SELECT * FROM " + GradeDatabase.GRADELOG_TABLE + " WHERE categoryId = :gradeID")
     GradeCategory getQuestionWithId(int gradeID);

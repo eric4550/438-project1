@@ -55,7 +55,8 @@ public class CalculateActivity extends AppCompatActivity {
 
         CalcBtn = findViewById(R.id.calcGradeBtn);
 
-        gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,"User").allowMainThreadQueries().build().getGradeIDDAO();
+//        gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,"User").allowMainThreadQueries().build().getGradeIDDAO();
+        gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,GradeDatabase.dbName).allowMainThreadQueries().build().getGradeIDDAO();
 
 
         Intent intent = getIntent();
@@ -97,7 +98,7 @@ public class CalculateActivity extends AppCompatActivity {
 
 // >>>>>>> master
 
-                addToDataBase(grade);
+//                addToDataBase(grade);
             }
         });
 
@@ -105,7 +106,7 @@ public class CalculateActivity extends AppCompatActivity {
     private void addToDataBase(char grade) {
 
 //        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
-//        int priceOfTickets = Integer.parseInt(mTicketPrice.getText().toString());
+//        int prxiceOfTickets = Integer.parseInt(mTicketPrice.getText().toString());
 
 //        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
 //        double priceOfTickets = Double.parseDouble(mTicketPrice.getText().toString());
