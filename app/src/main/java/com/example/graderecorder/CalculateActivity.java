@@ -48,23 +48,23 @@ public class CalculateActivity extends AppCompatActivity {
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int score = 0;
+                double score = 0;
                 char grade = ' ';
 
-                score += Integer.parseInt(Input1.getText().toString());
-                score += Integer.parseInt(Input2.getText().toString());
-                score += Integer.parseInt(Input3.getText().toString());
-                score += Integer.parseInt(Input4.getText().toString());
+                score += Double.parseDouble(Input1.getText().toString());
+                score += Double.parseDouble(Input2.getText().toString());
+                score += Double.parseDouble(Input3.getText().toString());
+                score += Double.parseDouble(Input4.getText().toString());
 
-                float percentage = score / 400;
+                double percentage = score / 400;
 
                 if(percentage >= 0.90) {
                     grade = 'A';
-                } else if(grade >= 0.8 && grade < 0.9) {
+                } else if(percentage >= 0.8 && percentage < 0.9) {
                     grade = 'B';
-                } else if (grade >= 0.7 && grade < 0.8) {
+                } else if (percentage >= 0.7 && percentage < 0.8) {
                     grade = 'C';
-                } else if(grade >= 0.6 && grade < 0.7) {
+                } else if(percentage >= 0.6 && percentage < 0.7) {
                     grade = 'D';
                 } else {
                     grade = 'F';

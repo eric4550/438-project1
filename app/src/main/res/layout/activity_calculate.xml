@@ -46,11 +46,12 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="1234"
-        android:inputType="number"
+        android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView5"
@@ -124,12 +125,13 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="textPersonName"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/s3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView17"
@@ -172,11 +174,11 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="0"
+        android:inputType="textPersonName"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/s2" />
+        app:layout_constraintTop_toBottomOf="@+id/s2"
+        tools:visibility="visible" />
 
     <EditText
         android:id="@+id/s2"
@@ -185,11 +187,11 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="4dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="0"
+        android:inputType="textPersonName"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/s1" />
+        app:layout_constraintTop_toBottomOf="@+id/s1"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textView14"
