@@ -22,17 +22,23 @@ public class GradeCategory implements Serializable {
     @NonNull
     private int categoryId;
     private String title;
-    private int weight;
+    private char grade;
+
+    public GradeCategory(String title, char grade) {
+    }
+
 
 //    private Date Date;
 
 
 
-    public GradeCategory( int weight) {
-//        this.title = title;
-        this.weight = weight;
 
-//        Date = new Date();
+    public char getGrade() {
+        return grade;
+    }
+
+    public void setGrade(char grade) {
+        this.grade = grade;
     }
 
     @NonNull
@@ -52,13 +58,6 @@ public class GradeCategory implements Serializable {
         this.title = title;
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
 
 //    public Date getDate() {
 //        return Date;

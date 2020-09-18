@@ -55,15 +55,19 @@ public class CalculateActivity extends AppCompatActivity {
 
         CalcBtn = findViewById(R.id.calcGradeBtn);
 
+
 //        gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,"User").allowMainThreadQueries().build().getGradeIDDAO();
         gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,GradeDatabase.dbName).allowMainThreadQueries().build().getGradeIDDAO();
 
 
         Intent intent = getIntent();
-        String whichClass = intent.getStringExtra("whichClass");
+        final String whichClass = intent.getStringExtra("whichClass");
+        char grade = gradeIDDAO.getGrade(whichClass);
         ClassSelector.setText("Class: " + whichClass);
 
         user = (User) getIntent().getSerializableExtra("User");
+
+        gradeView.setText("Grade new: " + grade);
 
 
 
@@ -93,17 +97,18 @@ public class CalculateActivity extends AppCompatActivity {
                 }
 
                 gradeView.setText("Grade: " + grade);
-// <<<<<<< X-changes
-// =======
 
-// >>>>>>> master
+                if(gradeIDDAO.getGrade(whichClass) != '\0') {
+                    gradeIDDAO.update(whichClass, grade);
+                } else {
+                    gradeIDDAO.insert(new GradeCategory(whichClass, grade));
+                }
 
-//                addToDataBase(grade);
             }
         });
 
     }
-    private void addToDataBase(char grade) {
+    private void addToDataBase(String whichClass, char grade) {
 
 //        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
 //        int prxiceOfTickets = Integer.parseInt(mTicketPrice.getText().toString());
@@ -111,7 +116,7 @@ public class CalculateActivity extends AppCompatActivity {
 //        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
 //        double priceOfTickets = Double.parseDouble(mTicketPrice.getText().toString());
 
-        gradeIDDAO.insert(new GradeCategory(grade));
+        gradeIDDAO.insert(new GradeCategory(whichClass, grade));
 
 
 //        mFlightLogDAO.insert(new FlightLog(departure, arrival, numOfTickets, priceOfTickets));

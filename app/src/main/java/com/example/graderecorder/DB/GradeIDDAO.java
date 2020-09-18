@@ -16,14 +16,14 @@ public interface GradeIDDAO {
     @Insert
     void insert(GradeCategory... gradecategories);
 
-    @Update
-    void update(GradeCategory... gradecategories);
+    @Query("UPDATE " + GradeDatabase.GRADELOG_TABLE + " SET grade = :grade WHERE title = :title")
+    void update(String title, char grade);
 
     @Delete
     void delete(GradeCategory... gradecategories);
 
-    @Query("Select * FROM " +  GradeDatabase.GRADELOG_TABLE + " WHERE title = :title")
-    GradeCategory getGrade(String title);
+    @Query("Select grade FROM " +  GradeDatabase.GRADELOG_TABLE + " WHERE title = :title")
+    char getGrade(String title);
 //    @Query("SELECT * FROM " + GradeDatabase.GRADELOG_TABLE + " ORDER BY Date DESC")
  //   List<GradeCategory> getGrades();
 

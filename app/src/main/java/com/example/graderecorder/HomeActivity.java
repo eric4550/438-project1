@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
     private User user;
 
     private Button course;
-    private Button assignments;
+//    private Button assignments;
     private Button returnLogin;
 
 
@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 //        }
 
         course = findViewById(R.id.coursesBtn);
-        assignments = findViewById(R.id.assignmentsBtn);
+//        assignments = findViewById(R.id.assignmentsBtn);
         returnLogin = findViewById(R.id.returnLoginBtn);
 
 
