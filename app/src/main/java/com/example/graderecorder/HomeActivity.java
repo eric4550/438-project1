@@ -22,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         user = (User) getIntent().getSerializableExtra("User");
         tvUser = findViewById(R.id.text);
 //
@@ -40,12 +41,6 @@ public class HomeActivity extends AppCompatActivity {
                 openCourse();
             }
         });
-        assignments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAssignments();
-            }
-        });
         returnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,16 +52,10 @@ public class HomeActivity extends AppCompatActivity {
 
     public void openCourse(){
         Intent intent = new Intent ( HomeActivity.this, Courses.class);
+        intent.putExtra("User", user);
         startActivity(intent);
     }
 
-    public void openAssignments(){
-// Should go to assignment activity. Not main.
-//        Intent intent = new Intent (this, AssignmentActivity.class);
-
-        Intent intent = new Intent (HomeActivity.this, RegisterActivity.class);
-        startActivity(intent);
-    }
 
     public void returnToLogin(){
         Intent intent = new Intent (HomeActivity.this, MainActivity.class);

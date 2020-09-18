@@ -6,33 +6,18 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 public class Grade implements Serializable {
-    /**
-     * Grade
-     * score
-     * AssigmentID
-     * studentID
-     * CourseID
-     * date earned
-     * gradeID
-     */
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int gradeId;
     private char grade;
-    private int score;
-    private int assingmentID;
     private int studentID;
     private int courseID;
-    private String dateEarned;
 
-    public Grade(char grade, int score, int assingmentID, int studentID, int courseID, String dateEarned) {
+    public Grade(char grade, int studentID, int courseID) {
         this.grade = grade;
-        this.score = score;
-        this.assingmentID = assingmentID;
         this.studentID = studentID;
         this.courseID = courseID;
-        this.dateEarned = dateEarned;
     }
 
     @NonNull
@@ -52,22 +37,6 @@ public class Grade implements Serializable {
         this.grade = grade;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public int getAssingmentID() {
-        return assingmentID;
-    }
-
-    public void setAssingmentID(int assingmentID) {
-        this.assingmentID = assingmentID;
-    }
-
     public int getStudentID() {
         return studentID;
     }
@@ -84,11 +53,4 @@ public class Grade implements Serializable {
         this.courseID = courseID;
     }
 
-    public String getDateEarned() {
-        return dateEarned;
-    }
-
-    public void setDateEarned(String dateEarned) {
-        this.dateEarned = dateEarned;
-    }
 }
