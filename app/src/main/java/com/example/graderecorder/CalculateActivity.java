@@ -2,6 +2,7 @@ package com.example.graderecorder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,9 @@ public class CalculateActivity extends AppCompatActivity {
 
         CalcBtn = findViewById(R.id.calcGradeBtn);
 
+        Intent intent = getIntent();
+        String whichClass = intent.getStringExtra("whichClass");
+        ClassSelector.setText("Class: " + whichClass);
 
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override

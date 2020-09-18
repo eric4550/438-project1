@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class Courses extends AppCompatActivity {
+    private User user;
 
     Button spanishBTN;
     Button cstBTN;
@@ -27,6 +28,7 @@ public class Courses extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        user = (User) getIntent().getSerializableExtra("User");
         spanishBTN = findViewById(R.id.spanishBtn);
         cstBTN = findViewById(R.id.CSTbtn);
         mathBTN = findViewById(R.id.mathBtn);
@@ -44,7 +46,7 @@ public class Courses extends AppCompatActivity {
         spanishBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCalculator();
+                openCalculator("Spanish");
             }
         });
 
@@ -52,7 +54,7 @@ public class Courses extends AppCompatActivity {
         cstBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCalculator();
+                openCalculator("CST");
             }
         });
 
@@ -60,7 +62,7 @@ public class Courses extends AppCompatActivity {
         mathBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCalculator();
+                openCalculator("Math");
             }
         });
 
@@ -68,14 +70,16 @@ public class Courses extends AppCompatActivity {
         englishBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                openCalculator();
+                openCalculator("English");
             }
         });
     }
 
 
-    public void openCalculator() {
+    public void openCalculator(String whichClass) {
         Intent intent = new Intent(Courses.this, CalculateActivity.class);
+        intent.putExtra("User", user);
+        intent.putExtra("whichClass", whichClass);
         startActivity(intent);
     }
 }
