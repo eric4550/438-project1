@@ -24,7 +24,7 @@ public class GradeCategory implements Serializable {
     private String title;
     private int weight;
 
-    private Date Date;
+//    private Date Date;
 
 
 
@@ -32,7 +32,7 @@ public class GradeCategory implements Serializable {
 //        this.title = title;
         this.weight = weight;
 
-        Date = new Date();
+//        Date = new Date();
     }
 
     @NonNull
@@ -60,11 +60,11 @@ public class GradeCategory implements Serializable {
         this.weight = weight;
     }
 
-    public Date getDate() {
-        return Date;
-    }
-
-    public void setDate(Date mDate) {
-        this.Date = mDate;
-    }
+//    public Date getDate() {
+//        return Date;
+//    }
+//
+//    public void setDate(Date mDate) {
+//        this.Date = mDate;
+//    }
 }
