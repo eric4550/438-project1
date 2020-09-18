@@ -79,8 +79,6 @@ public class CalculateActivity extends AppCompatActivity {
                 }
 
                 gradeView.setText("Grade: " + grade);
-                
-
             }
         });
 
