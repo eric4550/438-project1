@@ -28,8 +28,8 @@ public class GradeCategory implements Serializable {
 
 
 
-    public GradeCategory(String title, int weight) {
-        this.title = title;
+    public GradeCategory( int weight) {
+//        this.title = title;
         this.weight = weight;
 
         Date = new Date();

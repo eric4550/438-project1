@@ -1,6 +1,8 @@
 package com.example.graderecorder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.graderecorder.DB.GradeDatabase;
+import com.example.graderecorder.DB.GradeIDDAO;
+import com.example.graderecorder.DB.UserDatabase;
 
 public class CalculateActivity extends AppCompatActivity {
     TextView ClassSelector;
@@ -24,6 +30,8 @@ public class CalculateActivity extends AppCompatActivity {
     EditText Input4;
 
     Button CalcBtn;
+
+    private GradeIDDAO gradeIDDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +52,9 @@ public class CalculateActivity extends AppCompatActivity {
         Input4 = findViewById(R.id.s4);
 
         CalcBtn = findViewById(R.id.calcGradeBtn);
+
+        gradeIDDAO = Room.databaseBuilder(this, GradeDatabase.class,"User").allowMainThreadQueries().build().getGradeIDDAO();
+
 
         Intent intent = getIntent();
         String whichClass = intent.getStringExtra("whichClass");
@@ -75,10 +86,24 @@ public class CalculateActivity extends AppCompatActivity {
                 }
 
                 gradeView.setText("Grade: " + grade);
-                
 
+                addToDataBase(grade);
             }
         });
+
+    }
+    private void addToDataBase(char grade) {
+
+//        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
+//        int priceOfTickets = Integer.parseInt(mTicketPrice.getText().toString());
+
+//        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
+//        double priceOfTickets = Double.parseDouble(mTicketPrice.getText().toString());
+
+        gradeIDDAO.insert(new GradeCategory(grade));
+
+
+//        mFlightLogDAO.insert(new FlightLog(departure, arrival, numOfTickets, priceOfTickets));
 
     }
 
