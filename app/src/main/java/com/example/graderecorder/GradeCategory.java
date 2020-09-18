@@ -1,10 +1,15 @@
 package com.example.graderecorder;
 
 import androidx.annotation.NonNull;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.io.Serializable;
+import com.example.graderecorder.DB.GradeDatabase;
 
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity(tableName = GradeDatabase.GRADELOG_TABLE)
 public class GradeCategory implements Serializable {
     /**Title
      Weight
@@ -19,9 +24,15 @@ public class GradeCategory implements Serializable {
     private String title;
     private int weight;
 
+    private Date Date;
+
+
+
     public GradeCategory(String title, int weight) {
         this.title = title;
         this.weight = weight;
+
+        Date = new Date();
     }
 
     @NonNull
@@ -47,5 +58,13 @@ public class GradeCategory implements Serializable {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public Date getDate() {
+        return Date;
+    }
+
+    public void setDate(Date mDate) {
+        this.Date = mDate;
     }
 }

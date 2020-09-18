@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey;
 
 import com.example.graderecorder.DB.GradeDatabase;
 
-@Entity(tableName = GradeDatabase.GRADELOG_TABLE)
+//@Entity(tableName = GradeDatabase.GRADELOG_TABLE)
 
 public class GradeLog {
 
