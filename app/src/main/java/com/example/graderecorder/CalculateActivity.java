@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalculateActivity extends AppCompatActivity {
+    private User user;
+
     TextView ClassSelector;
     TextView gradeView;
 
@@ -49,6 +51,8 @@ public class CalculateActivity extends AppCompatActivity {
         String whichClass = intent.getStringExtra("whichClass");
         ClassSelector.setText("Class: " + whichClass);
 
+        user = (User) getIntent().getSerializableExtra("User");
+
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +79,6 @@ public class CalculateActivity extends AppCompatActivity {
                 }
 
                 gradeView.setText("Grade: " + grade);
-                
-
             }
         });
 
