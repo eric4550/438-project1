@@ -53,6 +53,8 @@ public class CalculateActivity extends AppCompatActivity {
 
         user = (User) getIntent().getSerializableExtra("User");
 
+
+
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +81,8 @@ public class CalculateActivity extends AppCompatActivity {
                 }
 
                 gradeView.setText("Grade: " + grade);
+
+
             }
         });
 
