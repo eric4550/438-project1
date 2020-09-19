@@ -17,6 +17,7 @@ import com.example.graderecorder.DB.UserDatabase;
 
 public class CalculateActivity extends AppCompatActivity {
     private User user;
+    private GradeCategory gradeCategory;
 
     TextView ClassSelector;
     TextView gradeView;
@@ -62,14 +63,12 @@ public class CalculateActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String whichClass = intent.getStringExtra("whichClass");
-        char grade = gradeIDDAO.getGrade(whichClass);
+        gradeCategory = (GradeCategory) getIntent().getSerializableExtra("GradeCategory");
         ClassSelector.setText("Class: " + whichClass);
 
         user = (User) getIntent().getSerializableExtra("User");
 
-        gradeView.setText("Grade new: " + grade);
-
-
+        setText(whichClass);
 
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +107,16 @@ public class CalculateActivity extends AppCompatActivity {
         });
 
     }
+
+
+    void setText(String whichClass) {
+        if(gradeIDDAO.getGrade(whichClass) != '\0') {
+            gradeView.setText("Grade: " + gradeCategory.getGrade());
+        } else {
+            gradeView.setText("Grade: " + ' ');
+        }
+    }
+
     private void addToDataBase(String whichClass, char grade) {
 
 //        int numOfTickets = Integer.parseInt(mTicketNum.getText().toString());
